@@ -12,6 +12,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 // const minValue = 0;
 // const maxValue = 100;
@@ -64,6 +66,27 @@ const Index = () => {
     electiveTwoTheoretical * 0.05 +
     securityTheoretical * 0.02;
 
+  const labGrade =
+    firstComLab * 0.08 +
+    secondComLab * 0.36 +
+    thirdComLab * 0.12 +
+    fourthComLab * 0.12 +
+    fifthComLab * 0.06 +
+    sixthComLab * 0.18 +
+    seventhComLab * 0.08;
+
+  const ihuGrade = ihuOne * 0.3 + ihuTwo * 0.3 + ihuThree * 0.4;
+
+  const finalGrade =
+    finalTheoretical * 0.89 + finalLab * 0.06 + finalYoks * 0.05;
+
+  const gradeDuringSemester =
+    theoreticalGrade * 0.89 + labGrade * 0.06 + ihuGrade * 0.05;
+
+  const semesterGrade = gradeDuringSemester * 0.6 + finalGrade * 0.4;
+
+  const canPass = finalGrade >= 50 && semesterGrade >= 60;
+
   return (
     <main>
       <Box
@@ -82,6 +105,64 @@ const Index = () => {
             gutterBottom
           >
             Grade Calculator
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              p: 1,
+              mt: 1,
+              mb: 1,
+              bgcolor: "background.paper",
+              borderRadius: 1,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Card sx={{ mr: 12 }}>
+              <CardContent>
+                <Typography
+                  sx={{ fontSize: 18 }}
+                  color="text.primary"
+                  gutterBottom
+                >
+                  Dönem İçi Notu
+                </Typography>
+                {gradeDuringSemester.toFixed(2)}
+              </CardContent>
+            </Card>
+            <Card sx={{ mr: 12 }}>
+              <CardContent>
+                <Typography
+                  sx={{ fontSize: 18 }}
+                  color="text.primary"
+                  gutterBottom
+                >
+                  Dönem Sonu Notu
+                </Typography>
+                {finalGrade.toFixed(2)}
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent>
+                <Typography
+                  sx={{ fontSize: 18 }}
+                  color="text.primary"
+                  gutterBottom
+                >
+                  Dönem Notu
+                </Typography>
+                {semesterGrade.toFixed(2)}
+              </CardContent>
+            </Card>
+          </Box>
+          <Typography
+            variant="h5"
+            align="center"
+            color={canPass ? "#4caf50" : "#f44336"}
+            paragraph
+            mb="16"
+          >
+            {canPass ? "Geçtiniz" : "Kaldınız"}
           </Typography>
           <Typography
             variant="h5"
