@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useState } from "react";
+
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -11,7 +13,57 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 
+// const minValue = 0;
+// const maxValue = 100;
+
+const onChangeHandler = (e, setFunction) => {
+  const newValue = e.target.value; // Math.min(Math.max(e.target.value, minValue), maxValue);
+  console.log(e.target.value);
+  setFunction(newValue);
+};
+
 const Index = () => {
+  const [firstComTheoretical, setFirstComTheoretical] = useState(100);
+  const [secondComTheoretical, setSecondComTheoretical] = useState(100);
+  const [thirdComTheoretical, setthirdComTheoretical] = useState(100);
+  const [fourthComTheoretical, setFourthComTheoretical] = useState(100);
+  const [fifthComTheoretical, setFifthComTheoretical] = useState(100);
+  const [electiveOneTheoretical, setElectiveOneTheoretical] = useState(100);
+  const [sixthComTheoretical, setSixthComTheoretical] = useState(100);
+  const [seventhComTheoretical, setSeventhComTheoretical] = useState(100);
+  const [eighthComTheoretical, setEighthComTheoretical] = useState(100);
+  const [electiveTwoTheoretical, setElectiveTwoTheoretical] = useState(100);
+  const [securityTheoretical, setSecurityTheoretical] = useState(100);
+
+  const [firstComLab, setFirstComLab] = useState(100);
+  const [secondComLab, setSecondComLab] = useState(100);
+  const [thirdComLab, setthirdComLab] = useState(100);
+  const [fourthComLab, setFourthComLab] = useState(100);
+  const [fifthComLab, setFifthComLab] = useState(100);
+  const [sixthComLab, setSixthComLab] = useState(100);
+  const [seventhComLab, setSeventhComLab] = useState(100);
+
+  const [ihuOne, setIhuOne] = useState(100);
+  const [ihuTwo, setIhuTwo] = useState(100);
+  const [ihuThree, setIhuThree] = useState(100);
+
+  const [finalTheoretical, setFinalTheoretical] = useState(100);
+  const [finalLab, setFinalLab] = useState(100);
+  const [finalYoks, setFinalYoks] = useState(100);
+
+  const theoreticalGrade =
+    firstComTheoretical * 0.09 +
+    secondComTheoretical * 0.13 +
+    thirdComTheoretical * 0.1 +
+    fourthComTheoretical * 0.07 +
+    fifthComTheoretical * 0.08 +
+    electiveOneTheoretical * 0.05 +
+    sixthComTheoretical * 0.11 +
+    seventhComTheoretical * 0.17 +
+    eighthComTheoretical * 0.13 +
+    electiveTwoTheoretical * 0.05 +
+    securityTheoretical * 0.02;
+
   return (
     <main>
       <Box
@@ -37,9 +89,9 @@ const Index = () => {
             color="text.secondary"
             paragraph
           >
-            Teorik
+            Teorik: {theoreticalGrade.toFixed(2)}
           </Typography>
-          <TableContainer component={Paper} gutterBottom>
+          <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
@@ -64,8 +116,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setFirstComTheoretical)
+                      }
+                      value={firstComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -78,8 +135,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setSecondComTheoretical)
+                      }
+                      value={secondComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -92,8 +154,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setthirdComTheoretical)
+                      }
+                      value={thirdComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -106,8 +173,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setFourthComTheoretical)
+                      }
+                      value={fourthComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -120,8 +192,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setFifthComTheoretical)
+                      }
+                      value={fifthComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -134,8 +211,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setElectiveOneTheoretical)
+                      }
+                      value={electiveOneTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -148,8 +230,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setSixthComTheoretical)
+                      }
+                      value={sixthComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -162,8 +249,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setSeventhComTheoretical)
+                      }
+                      value={seventhComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -176,8 +268,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setEighthComTheoretical)
+                      }
+                      value={eighthComTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -190,8 +287,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setElectiveTwoTheoretical)
+                      }
+                      value={electiveTwoTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -204,8 +306,13 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) =>
+                        onChangeHandler(e, setSecurityTheoretical)
+                      }
+                      value={securityTheoretical}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -222,7 +329,7 @@ const Index = () => {
             paragraph
             style={{ marginTop: 32 }}
           >
-            Lab
+            Lab: {labGrade.toFixed(2)}
           </Typography>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -246,8 +353,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setFirstComLab)}
+                      value={firstComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -260,8 +370,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setSecondComLab)}
+                      value={secondComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -274,8 +387,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setthirdComLab)}
+                      value={thirdComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -288,8 +404,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setFourthComLab)}
+                      value={fourthComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -302,8 +421,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setFifthComLab)}
+                      value={fifthComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -316,8 +438,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setSixthComLab)}
+                      value={sixthComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -330,8 +455,11 @@ const Index = () => {
                     <TextField
                       id="outlined-number"
                       type="number"
+                      inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
+                      onChange={(e) => onChangeHandler(e, setSeventhComLab)}
+                      value={seventhComLab}
                       InputLabelProps={{
                         shrink: true,
                       }}
@@ -348,7 +476,7 @@ const Index = () => {
             paragraph
             style={{ marginTop: 32 }}
           >
-            İHU
+            İHU: {ihuGrade.toFixed(2)}
           </Typography>
           <Container maxWidth="md" center>
             <TableContainer component={Paper}>
@@ -374,8 +502,11 @@ const Index = () => {
                       <TextField
                         id="outlined-number"
                         type="number"
+                        inputProps={{ min: 0, max: 100 }}
                         size="small"
                         style={{ width: "70%" }}
+                        onChange={(e) => onChangeHandler(e, setIhuOne)}
+                        value={ihuOne}
                         InputLabelProps={{
                           shrink: true,
                         }}
@@ -388,8 +519,11 @@ const Index = () => {
                       <TextField
                         id="outlined-number"
                         type="number"
+                        inputProps={{ min: 0, max: 100 }}
                         size="small"
                         style={{ width: "70%" }}
+                        onChange={(e) => onChangeHandler(e, setIhuTwo)}
+                        value={ihuTwo}
                         InputLabelProps={{
                           shrink: true,
                         }}
@@ -402,8 +536,11 @@ const Index = () => {
                       <TextField
                         id="outlined-number"
                         type="number"
+                        inputProps={{ min: 0, max: 100 }}
                         size="small"
                         style={{ width: "70%" }}
+                        onChange={(e) => onChangeHandler(e, setIhuThree)}
+                        value={ihuThree}
                         InputLabelProps={{
                           shrink: true,
                         }}
@@ -421,9 +558,9 @@ const Index = () => {
             paragraph
             style={{ marginTop: 32 }}
           >
-            Final
+            Final: {finalGrade.toFixed(2)}
           </Typography>
-          <Container maxWidth="md" center>
+          <Container maxWidth="md">
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 250 }} aria-label="simple table">
                 <TableHead>
@@ -447,8 +584,13 @@ const Index = () => {
                       <TextField
                         id="outlined-number"
                         type="number"
+                        inputProps={{ min: 0, max: 100 }}
                         size="small"
                         style={{ width: "70%" }}
+                        onChange={(e) =>
+                          onChangeHandler(e, setFinalTheoretical)
+                        }
+                        value={finalTheoretical}
                         InputLabelProps={{
                           shrink: true,
                         }}
@@ -461,8 +603,11 @@ const Index = () => {
                       <TextField
                         id="outlined-number"
                         type="number"
+                        inputProps={{ min: 0, max: 100 }}
                         size="small"
                         style={{ width: "70%" }}
+                        onChange={(e) => onChangeHandler(e, setFinalLab)}
+                        value={finalLab}
                         InputLabelProps={{
                           shrink: true,
                         }}
@@ -475,8 +620,11 @@ const Index = () => {
                       <TextField
                         id="outlined-number"
                         type="number"
+                        inputProps={{ min: 0, max: 100 }}
                         size="small"
                         style={{ width: "70%" }}
+                        onChange={(e) => onChangeHandler(e, setFinalYoks)}
+                        value={finalYoks}
                         InputLabelProps={{
                           shrink: true,
                         }}
