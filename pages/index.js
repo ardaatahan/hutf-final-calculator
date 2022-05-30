@@ -15,8 +15,6 @@ import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
-import Image from "next/image";
-
 // const minValue = 0;
 // const maxValue = 100;
 
@@ -120,7 +118,7 @@ const Index = () => {
               justifyContent: "center",
             }}
           >
-            <Card sx={{ mr: 12 }}>
+            <Card sx={{ mr: 12, minWidth: 100 }}>
               <CardContent>
                 <Typography
                   sx={{ fontSize: 18 }}
@@ -134,7 +132,7 @@ const Index = () => {
                 </Typography>
               </CardContent>
             </Card>
-            <Card sx={{ mr: 12 }}>
+            <Card sx={{ mr: 12, minWidth: 100 }}>
               <CardContent>
                 <Typography
                   sx={{ fontSize: 18 }}
@@ -146,7 +144,7 @@ const Index = () => {
                 <Typography align="center">{finalGrade.toFixed(2)}</Typography>
               </CardContent>
             </Card>
-            <Card>
+            <Card sx={{ minWidth: 100 }}>
               <CardContent>
                 <Typography
                   sx={{ fontSize: 18 }}
@@ -205,7 +203,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setFirstComTheoretical)
                       }
@@ -224,7 +222,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setSecondComTheoretical)
                       }
@@ -243,7 +241,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setthirdComTheoretical)
                       }
@@ -262,7 +260,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setFourthComTheoretical)
                       }
@@ -281,7 +279,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setFifthComTheoretical)
                       }
@@ -300,7 +298,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setElectiveOneTheoretical)
                       }
@@ -319,7 +317,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setSixthComTheoretical)
                       }
@@ -338,7 +336,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setSeventhComTheoretical)
                       }
@@ -357,7 +355,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setEighthComTheoretical)
                       }
@@ -376,7 +374,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setElectiveTwoTheoretical)
                       }
@@ -395,7 +393,7 @@ const Index = () => {
                       type="number"
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
-                      style={{ width: "70%" }}
+                      md={{ width: "70%" }}
                       onChange={(e) =>
                         onChangeHandler(e, setSecurityTheoretical)
                       }
