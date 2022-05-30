@@ -15,6 +15,8 @@ import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
+import Image from "next/image";
+
 // const minValue = 0;
 // const maxValue = 100;
 
@@ -104,7 +106,7 @@ const Index = () => {
             color="text.primary"
             gutterBottom
           >
-            Grade Calculator
+            HÜTF Not Hesaplama
           </Typography>
           <Box
             sx={{
@@ -127,7 +129,9 @@ const Index = () => {
                 >
                   Dönem İçi Notu
                 </Typography>
-                {gradeDuringSemester.toFixed(2)}
+                <Typography align="center">
+                  {gradeDuringSemester.toFixed(2)}
+                </Typography>
               </CardContent>
             </Card>
             <Card sx={{ mr: 12 }}>
@@ -139,7 +143,7 @@ const Index = () => {
                 >
                   Dönem Sonu Notu
                 </Typography>
-                {finalGrade.toFixed(2)}
+                <Typography align="center">{finalGrade.toFixed(2)}</Typography>
               </CardContent>
             </Card>
             <Card>
@@ -151,7 +155,9 @@ const Index = () => {
                 >
                   Dönem Notu
                 </Typography>
-                {semesterGrade.toFixed(2)}
+                <Typography align="center">
+                  {semesterGrade.toFixed(2)}
+                </Typography>
               </CardContent>
             </Card>
           </Box>
