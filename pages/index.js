@@ -118,7 +118,7 @@ const Index = () => {
               justifyContent: "center",
             }}
           >
-            <Card sx={{ mr: 12, minWidth: 100 }}>
+            <Card sx={{ mr: 6, minWidth: 100 }}>
               <CardContent>
                 <Typography
                   sx={{ fontSize: 18 }}
@@ -132,7 +132,7 @@ const Index = () => {
                 </Typography>
               </CardContent>
             </Card>
-            <Card sx={{ mr: 12, minWidth: 100 }}>
+            <Card sx={{ mr: 6, minWidth: 100 }}>
               <CardContent>
                 <Typography
                   sx={{ fontSize: 18 }}
