@@ -104,7 +104,7 @@ const Index = () => {
             color="text.primary"
             gutterBottom
           >
-            HÜTF Not Hesaplama
+            HÜTF Dönem 3 Not Hesaplama
           </Typography>
           <Box
             sx={{
