@@ -15,12 +15,11 @@ import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
-// const minValue = 0;
-// const maxValue = 100;
+const minValue = 0;
+const maxValue = 100;
 
 const onChangeHandler = (e, setFunction) => {
-  const newValue = e.target.value; // Math.min(Math.max(e.target.value, minValue), maxValue);
-  console.log(e.target.value);
+  const newValue = Math.min(Math.max(e.target.value, minValue), maxValue);
   setFunction(newValue);
 };
 
