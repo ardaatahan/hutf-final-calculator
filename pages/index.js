@@ -26,7 +26,7 @@ const onChangeHandler = (e, setFunction) => {
 const Index = () => {
   const [firstComTheoretical, setFirstComTheoretical] = useState(100);
   const [secondComTheoretical, setSecondComTheoretical] = useState(100);
-  const [thirdComTheoretical, setthirdComTheoretical] = useState(100);
+  const [thirdComTheoretical, setThirdComTheoretical] = useState(100);
   const [fourthComTheoretical, setFourthComTheoretical] = useState(100);
   const [fifthComTheoretical, setFifthComTheoretical] = useState(100);
   const [electiveOneTheoretical, setElectiveOneTheoretical] = useState(100);
@@ -38,7 +38,7 @@ const Index = () => {
 
   const [firstComLab, setFirstComLab] = useState(100);
   const [secondComLab, setSecondComLab] = useState(100);
-  const [thirdComLab, setthirdComLab] = useState(100);
+  const [thirdComLab, setThirdComLab] = useState(100);
   const [fourthComLab, setFourthComLab] = useState(100);
   const [fifthComLab, setFifthComLab] = useState(100);
   const [sixthComLab, setSixthComLab] = useState(100);
@@ -242,7 +242,7 @@ const Index = () => {
                       size="small"
                       md={{ width: "70%" }}
                       onChange={(e) =>
-                        onChangeHandler(e, setthirdComTheoretical)
+                        onChangeHandler(e, setThirdComTheoretical)
                       }
                       value={thirdComTheoretical}
                       InputLabelProps={{
@@ -474,7 +474,7 @@ const Index = () => {
                       inputProps={{ min: 0, max: 100 }}
                       size="small"
                       style={{ width: "70%" }}
-                      onChange={(e) => onChangeHandler(e, setthirdComLab)}
+                      onChange={(e) => onChangeHandler(e, setThirdComLab)}
                       value={thirdComLab}
                       InputLabelProps={{
                         shrink: true,
